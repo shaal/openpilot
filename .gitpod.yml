@@ -1,0 +1,9 @@
+image:
+  file: Dockerfile.openpilot
+
+tasks:
+  - init: |
+      git submodule update --init
+      tools/ubuntu_setup.sh
+      pipenv shell
+      scons -u -j$(nproc)
